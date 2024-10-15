@@ -1,0 +1,40 @@
+**Turtle graphics pattern** in Python. 
+This pattern creates a colorful spiral design using the `turtle` module. The code will use loops, changing colors, and angles to create a dynamic and eye-catching pattern.
+
+
+import turtle
+
+# Set up the turtle screen
+screen = turtle.Screen()
+screen.bgcolor("black")  # Set the background color of the screen
+
+# Create a turtle object
+pen = turtle.Turtle()
+pen.speed(0)  # Set the turtle speed to the maximum
+pen.width(2)  # Set the pen width
+
+# Define colors for the pattern
+colors = ["red", "yellow", "blue", "green", "purple", "orange"]
+
+# Draw the pattern
+for i in range(360):
+    pen.pencolor(colors[i % 6])  # Cycle through the colors
+    pen.forward(i * 2)  # Move the turtle forward
+    pen.left(59)  # Turn the turtle left by 59 degrees (for the spiral effect)
+
+# Hide the turtle and complete the drawing
+pen.hideturtle()
+
+# Close the turtle window when clicked
+screen.exitonclick()
+```
+
+### Explanation:
+- **Turtle Object**: The `pen` is the turtle object that will be drawing the pattern.
+- **Color Cycling**: The `pencolor` changes with each iteration of the loop. We cycle through the list of six colors using `i % 6`.
+- **Spiral Movement**: The turtle moves forward by an increasing amount (`i * 2`) with each loop iteration, which creates the outward spiral. The left turn of `59` degrees after each step helps create the circular effect.
+- **Speed**: The turtle's speed is set to maximum (`speed(0)`) to draw the pattern as quickly as possible.
+
+### Visualization:
+This code will generate a spiral of increasing size with vibrant color transitions, creating a hypnotic and colorful pattern.
+
